@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ResponsiveAppBar from "./Components/Topbar"
+
+import { AppBar, Toolbar, Button, Box, Typography, Grid, Paper, Container } from '@mui/material';
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -31,6 +34,13 @@ export default function RootLayout({
       >
         <ResponsiveAppBar></ResponsiveAppBar>
         {children}
+        <Box sx={{ backgroundColor: '#333', color: 'white', padding: 3, textAlign: 'center' }}>
+        <Typography variant="body2">&copy; 2024 My Website. All rights reserved.</Typography>
+        <Typography variant="body2" sx={{ marginTop: 1 }}>
+          Follow us on social media!
+        </Typography>
+      </Box>
+
       </body>
     </html>
   );
